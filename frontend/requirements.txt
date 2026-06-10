@@ -1,0 +1,7 @@
+# ─────────────────────────────────────────────────────────────
+# AI Career Copilot — Frontend Requirements (Streamlit Cloud)
+# ─────────────────────────────────────────────────────────────
+
+streamlit==1.45.1
+requests==2.32.3
+python-dotenv==1.0.1

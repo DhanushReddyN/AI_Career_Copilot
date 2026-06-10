@@ -1,0 +1,37 @@
+# ─── Python & Cache ──────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ─── Virtual environments ─────────────────────────────
+myenv/
+venv/
+.venv/
+
+# ─── Environment secrets ──────────────────────────────
+.env
+
+# ─── ChromaDB vector stores ───────────────────────────
+chroma_resume/
+chroma_jd/
+
+# ─── Uploaded user data ───────────────────────────────
+app/data/resumes/
+app/data/jds/
+app/uploads/
+data/
+
+# ─── Git & IDE ────────────────────────────────────────
+.git/
+.gitignore
+.idea/
+.vscode/
+
+# ─── OS ───────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── Docs (not needed in container) ──────────────────
+docs/
+README.md

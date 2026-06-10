@@ -1,0 +1,29 @@
+# ─────────────────────────────────────────────────────────────
+# Render Blueprint — AI Career Copilot Backend
+# Deploy at: https://dashboard.render.com/blueprints
+# ─────────────────────────────────────────────────────────────
+
+services:
+  - type: web
+    name: ai-career-copilot-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    region: oregon
+    plan: free
+
+    # Environment variables — set GROQ_API_KEY in Render dashboard
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false   # Set manually in Render dashboard (keeps secret safe)
+      - key: PYTHONUNBUFFERED
+        value: "1"
+
+    # Persistent disk for ChromaDB vector stores
+    # Note: Free plan doesn't support disks; upgrade to Starter ($7/mo) for persistence
+    # disk:
+    #   name: chroma-data
+    #   mountPath: /app/chroma_resume
+    #   sizeGB: 1
+
+    healthCheckPath: /health
+    autoDeploy: true

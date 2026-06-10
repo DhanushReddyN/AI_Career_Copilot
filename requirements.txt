@@ -1,0 +1,34 @@
+# ─────────────────────────────────────────────────────────────
+# AI Career Copilot — Backend Requirements
+# ─────────────────────────────────────────────────────────────
+# Only direct dependencies. Pin to avoid breaking changes.
+# ─────────────────────────────────────────────────────────────
+
+# Web Framework
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.12
+pydantic==2.9.2
+
+# Environment
+python-dotenv==1.0.1
+
+# LangChain ecosystem
+langchain==0.3.25
+langchain-community==0.3.23
+langchain-groq==0.3.2
+langchain-chroma==0.2.4
+langchain-huggingface==0.1.2
+langchain-core==0.3.55
+
+# Vector Store
+chromadb==1.0.12
+
+# Embeddings
+sentence-transformers==3.4.1
+
+# ML utilities
+scikit-learn==1.6.1
+
+# PDF parsing
+pypdf==5.4.0
