@@ -24,10 +24,15 @@ chroma_resume/
 chroma_jd/
 
 # ─── Uploaded documents (user data, never commit) ─────
-app/data/resumes/
-app/data/jds/
-app/uploads/
+app/data/resumes/*
+app/data/jds/*
+app/uploads/*
 data/
+
+# Allow directory placeholders through
+!app/data/resumes/.gitkeep
+!app/data/jds/.gitkeep
+!app/uploads/.gitkeep
 
 # ─── OS & Editor ──────────────────────────────────────
 .DS_Store
