@@ -3,9 +3,17 @@ from chromadb.config import Settings
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
-embedding_model = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-)
+from langchain_huggingface import HuggingFaceEmbeddings
+
+_embedding_model = None
+
+def get_embedding_model():
+    global _embedding_model
+    if _embedding_model is None:
+        _embedding_model = HuggingFaceEmbeddings(
+            model_name="sentence-transformers/all-MiniLM-L6-v2"
+        )
+    return _embedding_model
 
 # Collection names used by resume and JD stores
 RESUME_COLLECTION = "resume_collection"
@@ -49,7 +57,7 @@ def create_vector_store(chunks, persist_directory):
     db = Chroma(
         client=client,
         collection_name=collection_name,
-        embedding_function=embedding_model,
+        embedding_function=get_embedding_model(),
     )
 
     # Add documents
@@ -79,7 +87,7 @@ def load_vector_store(persist_directory):
     db = Chroma(
         client=client,
         collection_name=collection_name,
-        embedding_function=embedding_model,
+        embedding_function=get_embedding_model(),
     )
 
     return db
